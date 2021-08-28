@@ -1,0 +1,38 @@
+@import './assets/mixins';
+@import './assets/vars';
+
+.header {
+    background-color: $backgroundColor;
+    padding: 12px 0;
+    border-bottom: 4px solid $acentColor;
+    &__inner {
+        max-width: 1280px;
+        margin: auto;
+        @include flex (flex,row,space-between,center);
+    }
+    .navbar{
+        &__menu {
+            @include flex (flex,row,flex-start,center);
+            text-align: center;
+        }
+        &__item {
+            margin: 0 40px;
+        }
+        &__link {
+            color: $primaryColor;
+        }
+        &__contacts {
+            text-align: right;
+        }
+        &__text {
+            display: block;
+            @include text (14px,400,16px,$primaryColor);
+            margin-bottom: 4px;
+        }
+        &__phone {
+            @include text (17px,700,20px,$primaryColor);
+        }
+
+    }
+    
+}

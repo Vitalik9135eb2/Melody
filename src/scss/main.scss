@@ -1,0 +1,83 @@
+@import './assets/mixins';
+@import './assets/vars';
+
+
+
+.main {
+    padding-top: 54px;
+    padding-bottom: 100px;
+    .container{
+        @extend %container;
+    }
+    &__inner{
+        @include flex(flex,row,space-between,center);
+    }
+
+    svg.home__image{
+        width: 734px;
+        height: 640px;
+        rect{
+            width: 100%;
+            height: 100%;
+        }
+        path{
+            opacity: 0;
+            cursor: pointer;
+            &:hover{
+                opacity: 1;
+            }
+        }
+        path.current__floor {
+            opacity: 1;
+        }
+    }
+    
+
+    &__info{
+        height: 640px;
+        @include flex(flex,column,space-between,center);
+        flex-grow: 1;
+        text-align: center;
+    }
+
+    &__title{
+        font-family: 'Bebas Neue', sans-serif;
+        @include text(37px,400,44px,$backgroundColor);
+        margin-top: 30px;
+    }
+
+    .counter__group {
+        @include flex(flex,column,space-between,center);
+    }
+
+    .counter__button{
+        cursor: pointer;
+    }
+    .counter__up{
+        transform: rotate(180deg);
+        margin-bottom: 15px;
+    }
+    .counter__down{
+        margin-top: 15px;
+    }
+
+    .floor__counter {
+        font-family: 'Bebas Neue', sans-serif;
+        @include text (124px,400,124px,$backgroundColor);
+    }
+
+    &__button{
+        background-color: $acentColor;
+        border-radius: 6px;
+        color: $primaryColor;
+        border: none;
+        padding: 16px 36px;
+        cursor: pointer;
+        transition: .3s;
+        margin-bottom: 30px;
+        &:hover{
+            background-color: darken($acentColor, 20%);
+        }
+    }
+
+}

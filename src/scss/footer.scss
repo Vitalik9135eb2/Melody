@@ -1,0 +1,64 @@
+@import './assets/mixins';
+@import './assets/vars';
+
+
+
+.footer {
+    background-color: $secondaryColor;
+    padding: 50px 0;
+    border-top: 4px solid $acentColor;
+    .container{
+        @extend %container;
+    }
+    &__inner{
+        @include flex (flex,row,space-between,center);
+    }
+
+    &__left{
+        width: 440px;
+        @include flex (flex,row,space-between,center);
+    }
+
+    &__text {
+        display: block;
+        @include text (14px,400,16px,$backgroundColor);
+        margin-bottom: 4px;
+    }
+
+    &__phone {
+        @include text (17px,700,20px,$backgroundColor);
+        &:hover{
+            color: darken($backgroundColor, 70%);
+        }
+    }
+
+    &__social {
+        @include flex (flex,row,center,center);
+        &__link{
+            margin-right: 15px;
+        }
+    }
+
+    &__right{
+        width: 515px;
+        &__list{
+            @include flex (flex,row,center,center);
+        }
+        &__item{
+            margin: 0 10px;
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    
+        &__link{
+            @include text (16px,400,19px,$backgroundColor);
+            transition: .3s;
+            &:hover{
+                color: darken($backgroundColor, 70%);
+            }
+        }
+        
+    }
+}
+
