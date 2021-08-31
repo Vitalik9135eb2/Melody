@@ -6,16 +6,42 @@
 .main {
     padding-top: 54px;
     padding-bottom: 100px;
+    @media (max-width: 1400px){
+        padding-top: 40px;
+        padding-bottom: 80px;
+    }
+    @media (max-width: 576px){
+        padding-top: 20px;
+        padding-bottom: 40px;
+    }
     .container{
         @extend %container;
     }
     &__inner{
         @include flex(flex,row,space-between,center);
+        @media (max-width: 576px){
+            @include flex(flex,column,flex-start,center);
+        }
     }
 
     svg.home__image{
         width: 734px;
         height: 640px;
+        @media (max-width: 1400px){
+            width: 700px;
+        }
+        @media (max-width: 1200px){
+            width: 500px;
+            height: 496px;
+        }
+        @media (max-width: 768px){
+            width: 340px;
+            height: 300px;
+        }
+        @media (max-width: 768px){
+            width: 310px;
+            height: 250px;
+        }
         rect{
             width: 100%;
             height: 100%;
@@ -38,12 +64,31 @@
         @include flex(flex,column,space-between,center);
         flex-grow: 1;
         text-align: center;
+        @media (max-width: 1200px){
+            height: 470px;
+            margin-left: 50px;
+        }
+        @media (max-width: 768px){
+            margin-left: 20px;
+            height: 320px;
+        }
+        @media (max-width: 576px){
+            height: 240px;
+            margin-left: 0;
+        }
     }
 
     &__title{
         font-family: 'Bebas Neue', sans-serif;
         @include text(37px,400,44px,$backgroundColor);
         margin-top: 30px;
+        @media (max-width: 768px){
+            @include text(18px,400,18px,$backgroundColor);
+        }
+        @media (max-width: 768px){
+            margin-top: 20px;
+            
+        }
     }
 
     .counter__group {
@@ -64,6 +109,14 @@
     .floor__counter {
         font-family: 'Bebas Neue', sans-serif;
         @include text (124px,400,124px,$backgroundColor);
+        @media (max-width: 1200px){
+            @include text (75px,400,75px,$backgroundColor);
+            
+        }
+        @media (max-width: 768px){
+            @include text (50px,400,50px,$backgroundColor);
+            
+        }
     }
 
     &__button{
@@ -78,6 +131,16 @@
         &:hover{
             background-color: darken($acentColor, 20%);
         }
+        @media (max-width: 1200px){
+            padding: 10px 20px;
+            font-size: 12px;
+        }
+        @media (max-width: 768px){
+            margin-bottom: 20px;
+            font-size: 10px;
+            
+        }
+        
     }
 
 }

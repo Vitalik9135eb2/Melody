@@ -18,13 +18,25 @@ $linkColor: #5286EC;
     margin: 0 auto;
     width: 1280px;
     @media screen and (max-width: 1600px) {
-        width: 1200px;
+        width: 1280px;
     }
     @media screen and (max-width: 1400px) {
-        width: 980px;
+        width: 1110px;
     }
     @media screen and (max-width: 1200px) {
         width: 800px;
+    }
+    @media screen and (max-width: 992px) {
+        width: 660px;
+    }
+    @media screen and (max-width: 768px) {
+        width: 500px;
+    }
+    @media screen and (max-width: 576px) {
+        width: 315px;
+    }
+    @media screen and (max-width: 340px) {
+        width: 270px;
     }
 
 }

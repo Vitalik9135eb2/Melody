@@ -5,21 +5,135 @@
     background-color: $backgroundColor;
     padding: 12px 0;
     border-bottom: 4px solid $acentColor;
+    width: 100%;
     &__inner {
+        position: relative;
         max-width: 1280px;
         margin: auto;
         @include flex (flex,row,space-between,center);
+        @media (max-width: 1400px){
+            max-width: 1160px;
+        }
+        @media (max-width: 1200px){
+            max-width: 920px;
+        }
+        @media (max-width: 992px){
+            max-width: 720px;
+        }
+        @media (max-width: 768px){
+            max-width: 540px;
+        }
+        @media (max-width: 576px){
+            max-width: 320px;
+        }
+        @media (max-width: 340px){
+            max-width: 290px;
+        }
+    }
+    .logo{
+        width: 100px;
+        height: 25px;
+        z-index: 9;
+        @media (max-width: 768px){
+            position: absolute;
+            top: 16%;
+            left: 42%;
+        }
+        @media (max-width: 576px){
+            width: 70px;
+            left: 35%;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .menu__burger{
+        display: none;
+        position: relative;
+        height: 3px;
+        width: 20px;
+        background-color: #fff;
+        z-index: 99999;
+        cursor: pointer;
+        transition: .2s;
+        &::before,&::after{
+            position: absolute;
+            content: "";
+            height: 2px;
+            width: 25px;
+            background-color: #fff;
+            left: 0;
+            top:10px;
+
+        }
+        &::after{
+            top: 7px;
+            
+        }
+        &::before{
+            top: -7px;
+            height: 2.5px;
+        }
+        @media (max-width: 768px){
+            display: block;
+        }
+    }
+    .menu__burger.active{
+        transform: rotate(45deg);
+        width: 25px;
+        &::before{
+            transform: rotate(95deg);
+            top: 0;
+            height: 3px;
+        }
+        &::after{
+            display: none;  
+        }
+    }
+
+    .navbar.active{
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 8;
+        background-color: $backgroundColor;
+        @include flex(flex,row, center,center);
     }
     .navbar{
+        @media (max-width: 768px){
+            display: none;
+        }
         &__menu {
             @include flex (flex,row,flex-start,center);
             text-align: center;
+            @media (max-width: 768px){
+                flex-direction: column;
+            }
         }
         &__item {
             margin: 0 40px;
+            @media (max-width: 1200px){
+                margin: 0 30px;
+            }
+            @media (max-width: 992px){
+                margin: 0 12px;
+            }
+            @media (max-width: 768px){
+                margin: 20px 0 0 0;
+            }
         }
         &__link {
             color: $primaryColor;
+            @media (max-width: 1200px){
+                @include text (12px,400,16px,$primaryColor);
+            }
+            @media (max-width: 992px){
+                font-size: 10px;
+            }
         }
         &__contacts {
             text-align: right;
@@ -28,9 +142,29 @@
             display: block;
             @include text (14px,400,16px,$primaryColor);
             margin-bottom: 4px;
+            @media (max-width: 1200px){
+                font-size: 12px;
+            }
+            @media (max-width: 992px){
+                font-size: 10px;
+            }
+            @media (max-width: 576px){
+                font-size: 8px;
+                line-height: 8px;
+            }
         }
         &__phone {
             @include text (17px,700,20px,$primaryColor);
+            @media (max-width: 1200px){
+                @include text (14px,400,16px,$primaryColor);
+            }
+            @media (max-width: 992px){
+                font-size: 12px;
+            }
+            @media (max-width: 576px){
+                font-size: 10px;
+                line-height: 10px;
+            }
         }
 
     }

@@ -17,6 +17,8 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
 button{background-color: #fff;}
 /*--------------------*/
 
+body.lock{overflow: hidden;}
+
 @font-face {
     font-family: "Bebas Neue";
     src: local("BebasNeueRegular"), url("../fonts/BebasNeueRegular.woff2") format("woff2"),

@@ -1,5 +1,21 @@
 
 $(document).ready(function() {
+
+/** Menu Burge */
+const menuBurger = document.querySelector(".menu__burger");
+const menuBody = document.querySelector(".navbar");
+
+if(menuBurger){
+  menuBurger.addEventListener("click" , function(e){
+    menuBurger.classList.toggle("active");
+    menuBody.classList.toggle("active");
+    $('body').toggleClass('lock');
+    })
+}
+/*****************************************/
+
+
+
     let currentFloor = 2
     const floorPath = $('.home__image path');
     const counterUp = $('.counter__up');
